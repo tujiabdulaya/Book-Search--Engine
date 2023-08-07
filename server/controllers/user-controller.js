@@ -21,6 +21,7 @@ module.exports = {
     const user = await User.create(body);
 
     if (!user) {
+      console.log('no user was created ')
       return res.status(400).json({ message: 'Something is wrong!' });
     }
     const token = signToken(user);
